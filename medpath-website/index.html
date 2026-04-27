@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MedPath — Select Language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:    #0B1D35;
+  --teal:    #0A9973;
+  --teal-hi: #0EC489;
+  --white:   #FFFFFF;
+  --surface: #F6F8FB;
+  --border:  #E0E5EE;
+  --txt2:    #485669;
+  --txt3:    #8A97A8;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fb: 'DM Sans', -apple-system, sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+html,body{
+  height:100%;
+  font-family:var(--fb);
+  background:#fff;
+  color:var(--navy);
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
+}
+
+/* ── BACKGROUND ──────────────────────────── */
+.bg{
+  position:fixed;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% -10%, rgba(10,153,115,.07) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 5%  90%,  rgba(11,29,53,.04)   0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 95% 10%,  rgba(10,153,115,.04) 0%, transparent 55%),
+    #fff
+}
+
+/* subtle grid */
+.bg::after{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(11,29,53,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,29,53,.025) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 75%)
+}
+
+/* ── LAYOUT ──────────────────────────────── */
+.page{
+  position:relative;z-index:1;
+  height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:40px 24px;
+  gap:0
+}
+
+/* ── LOGO ─────────────────────────────────── */
+.logo{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:56px;
+  opacity:0;transform:translateY(14px);
+  animation:fu .7s var(--ease) .1s forwards
+}
+.logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;letter-spacing:.6px
+}
+.logo-name{
+  font-size:18px;font-weight:600;letter-spacing:-.3px;color:var(--navy)
+}
+
+/* ── HEADLINE ─────────────────────────────── */
+.headline{
+  font-family:var(--fd);
+  font-size:clamp(32px,4vw,52px);
+  font-weight:400;line-height:1.2;
+  color:var(--navy);text-align:center;
+  margin-bottom:12px;
+  opacity:0;transform:translateY(18px);
+  animation:fu .8s var(--ease) .22s forwards
+}
+.headline em{font-style:italic;color:var(--teal)}
+
+.sub{
+  font-size:15px;font-weight:300;color:var(--txt2);
+  text-align:center;line-height:1.65;
+  margin-bottom:64px;
+  opacity:0;transform:translateY(18px);
+  animation:fu .8s var(--ease) .34s forwards
+}
+
+/* ── LANG CARDS ───────────────────────────── */
+.lang-wrap{
+  display:flex;gap:16px;
+  opacity:0;transform:translateY(20px);
+  animation:fu .8s var(--ease) .48s forwards
+}
+
+.lang-card{
+  position:relative;
+  width:220px;
+  background:rgba(255,255,255,.75);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:36px 28px 32px;
+  text-decoration:none;
+  display:flex;flex-direction:column;align-items:flex-start;gap:0;
+  overflow:hidden;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .25s;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px)
+}
+
+.lang-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, var(--navy), var(--teal));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease)
+}
+
+.lang-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 56px rgba(11,29,53,.1);
+  border-color:rgba(11,29,53,.12)
+}
+
+.lang-card:hover::before{transform:scaleX(1)}
+
+/* flag */
+.lang-flag{
+  font-size:32px;margin-bottom:20px;
+  line-height:1;display:block;
+  transition:transform .3s var(--ease)
+}
+.lang-card:hover .lang-flag{transform:scale(1.1)}
+
+/* lang label */
+.lang-label{
+  font-size:11px;font-weight:600;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--txt3);
+  margin-bottom:6px
+}
+
+/* lang name */
+.lang-name{
+  font-family:var(--fd);font-size:26px;font-weight:500;
+  color:var(--navy);line-height:1.1;margin-bottom:4px
+}
+
+/* lang sub */
+.lang-sub{
+  font-size:12px;font-weight:300;color:var(--txt3);
+  line-height:1.5;margin-bottom:28px
+}
+
+/* arrow */
+.lang-arrow{
+  width:32px;height:32px;border-radius:50%;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--txt3);
+  transition:background .25s,border-color .25s,color .25s,transform .3s var(--ease);
+  margin-top:auto
+}
+.lang-card:hover .lang-arrow{
+  background:var(--navy);border-color:var(--navy);
+  color:#fff;transform:translate(2px,-2px)
+}
+
+/* active states */
+.lang-card.en:hover{box-shadow:0 24px 56px rgba(11,29,53,.1)}
+.lang-card.ko:hover{box-shadow:0 24px 56px rgba(11,29,53,.08)}
+.lang-card.ja:hover{box-shadow:0 24px 56px rgba(11,29,53,.08)}
+
+/* ── DIVIDER between cards ────────────────── */
+.lang-divider{
+  width:1px;
+  align-self:stretch;
+  background:var(--border);
+  flex-shrink:0
+}
+
+/* ── BOTTOM NOTE ──────────────────────────── */
+.bottom{
+  margin-top:52px;
+  font-size:12px;color:var(--txt3);
+  text-align:center;line-height:1.7;
+  opacity:0;
+  animation:fu .8s var(--ease) .7s forwards
+}
+
+/* ── ANIMATION ────────────────────────────── */
+@keyframes fu{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ── RESPONSIVE ───────────────────────────── */
+@media(max-width:720px){
+  html,body{overflow:auto}
+  .page{height:auto;min-height:100vh;padding:60px 20px 48px}
+  .lang-wrap{flex-direction:column;gap:12px;width:100%;max-width:360px}
+  .lang-divider{display:none}
+  .lang-card{
+    width:100%;flex-direction:row;
+    align-items:center;padding:24px 24px;gap:16px
+  }
+  .lang-flag{font-size:28px;margin-bottom:0;flex-shrink:0}
+  .lang-sub{display:none}
+  .lang-name{font-size:22px;margin-bottom:2px}
+  .lang-label{margin-bottom:2px}
+  .lang-arrow{margin-top:0;margin-left:auto;flex-shrink:0}
+  .lang-card > div{display:flex;flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="page">
+
+  <!-- LOGO -->
+  <div class="logo">
+    <div class="logo-mark">MP</div>
+    <span class="logo-name">MedPath</span>
+  </div>
+
+  <!-- HEADLINE -->
+  <h1 class="headline">Select your <em>language</em></h1>
+  <p class="sub">Choose your preferred language to continue.<br>언어를 선택해 주세요 &nbsp;·&nbsp; 言語を選択してください</p>
+
+  <!-- LANGUAGE CARDS -->
+  <div class="lang-wrap">
+
+    <!-- ENGLISH -->
+    <a href="medpath-landing.html" class="lang-card en">
+      <span class="lang-flag">🇬🇧</span>
+      <span class="lang-label">English</span>
+      <span class="lang-name">English</span>
+      <span class="lang-sub">For international students<br>in Korea &amp; Japan</span>
+      <div class="lang-arrow">→</div>
+    </a>
+
+    <div class="lang-divider"></div>
+
+    <!-- KOREAN -->
+    <a href="medpath-landing-ko.html" class="lang-card ko">
+      <span class="lang-flag">🇰🇷</span>
+      <span class="lang-label">Korean</span>
+      <span class="lang-name">한국어</span>
+      <span class="lang-sub">한국 학생 및 학부모를<br>위한 버전</span>
+      <div class="lang-arrow">→</div>
+    </a>
+
+    <div class="lang-divider"></div>
+
+    <!-- JAPANESE -->
+    <a href="medpath-landing-ja.html" class="lang-card ja">
+      <span class="lang-flag">🇯🇵</span>
+      <span class="lang-label">Japanese</span>
+      <span class="lang-name">日本語</span>
+      <span class="lang-sub">日本の学生・保護者の<br>方向けのページ</span>
+      <div class="lang-arrow">→</div>
+    </a>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <p class="bottom">
+    MedPath &nbsp;·&nbsp; Medical School Admission System<br>
+    Korea &amp; Japan → European Medical Universities
+  </p>
+
+</div>
+
+</body>
+</html>
