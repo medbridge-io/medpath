@@ -9,7 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
+a {
+  text-decoration: none;
+  color: inherit;
+} 
+.lang-card {
+  transition: all 0.35s var(--ease);
+}
+
+.lang-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 24px 56px rgba(11,29,53,.1);
+}
+  :root{
   --navy:    #0B1D35;
   --teal:    #0A9973;
   --teal-hi: #0EC489;
