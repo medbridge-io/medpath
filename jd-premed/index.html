@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedPath — Gold Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #060d1a;
+    --navy: #0B1628;
+    --navy-mid: #0f1e35;
+    --border: rgba(255,255,255,0.08);
+    --white: #f2f4f8;
+    --dim: rgba(242,244,248,0.55);
+    --accent: #C9A96E;
+    --accent-warm: #e8c87a;
+    --accent-glow: rgba(201,169,110,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Noto Sans KR', 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 48px;
+    border-bottom: 1px solid var(--border);
+    background: var(--navy);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: 0.3px;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(201,169,110,0.35);
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 48px 72px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(201,169,110,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 400;
+    color: var(--dim);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .hero-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(242,244,248,0.65);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 8px;
+    letter-spacing: 0.2px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .hero-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+  .hero-cta .arrow { font-size: 18px; }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── WHAT IS MEDPATH ── */
+  .section {
+    padding: 64px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent-warm);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+  }
+  .section h2 em { font-style: italic; color: var(--accent); }
+  .section p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(242,244,248,0.68);
+    line-height: 1.85;
+    max-width: 680px;
+  }
+
+  /* ── 3-PILLAR GRID ── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .pillar {
+    background: var(--navy-mid);
+    padding: 32px 28px;
+    position: relative;
+  }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: rgba(201,169,110,0.2);
+    line-height: 1;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .pillar h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 10px;
+    letter-spacing: 0.1px;
+  }
+  .pillar p {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(242,244,248,0.55);
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  /* ── PROCESS ROW ── */
+  .process-wrap {
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 64px 48px;
+  }
+  .process-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 40px;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: calc(16.6% + 20px);
+    right: calc(16.6% + 20px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) 0%, rgba(201,169,110,0.2) 100%);
+  }
+  .step {
+    text-align: center;
+    padding: 0 12px;
+  }
+  .step-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .step:nth-child(1) .step-icon { background: rgba(201,169,110,0.15); border: 1px solid rgba(201,169,110,0.35); }
+  .step:nth-child(2) .step-icon { background: rgba(201,169,110,0.22); border: 1px solid rgba(201,169,110,0.55); }
+  .step:nth-child(3) .step-icon { background: rgba(201,169,110,0.35); border: 1px solid var(--accent); }
+  .step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+  .step p {
+    font-size: 12.5px;
+    color: rgba(242,244,248,0.5);
+    line-height: 1.6;
+  }
+  .step .step-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* ── LLR HIGHLIGHT ── */
+  .llr-box {
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgba(201,169,110,0.07) 0%, rgba(201,169,110,0.02) 100%);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .llr-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(201,169,110,0.12);
+    border: 1px solid rgba(201,169,110,0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .llr-content h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+  }
+  .llr-content p {
+    font-size: 13px;
+    color: rgba(242,244,248,0.58);
+    line-height: 1.7;
+    max-width: 100%;
+  }
+  .llr-tag {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(201,169,110,0.1);
+    border: 1px solid rgba(201,169,110,0.22);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-wrap {
+    padding: 80px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cta-wrap h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .cta-wrap h2 em { font-style: italic; color: var(--accent); }
+  .cta-wrap .cta-sub {
+    font-size: 14px;
+    color: rgba(242,244,248,0.5);
+    margin-bottom: 44px;
+    font-weight: 300;
+  }
+
+  .cta-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .cta-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.2s;
+    display: block;
+    text-align: left;
+  }
+  .cta-card:hover { border-color: rgba(201,169,110,0.35); transform: translateY(-2px); }
+  .cta-card.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .cta-card.primary:hover { opacity: 0.92; }
+  .cta-card .card-icon { font-size: 22px; margin-bottom: 14px; display: block; }
+  .cta-card .card-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .cta-card.primary .card-label { color: rgba(255,255,255,0.7); }
+  .cta-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .cta-card p {
+    font-size: 12px;
+    color: rgba(242,244,248,0.5);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .cta-card.primary p { color: rgba(255,255,255,0.75); }
+
+  .disclaimer {
+    font-size: 11.5px;
+    color: rgba(242,244,248,0.35);
+    letter-spacing: 0.3px;
+    font-weight: 300;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navy);
+  }
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-logo-mark {
+    width: 26px;
+    height: 26px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    color: #fff;
+  }
+  .footer-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(242,244,248,0.5);
+  }
+  .footer-right {
+    font-size: 11.5px;
+    color: rgba(242,244,248,0.28);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .header { padding: 20px 24px; }
+    .hero, .section { padding: 48px 24px; }
+    .pillars { grid-template-columns: 1fr; }
+    .process-wrap { padding: 48px 24px; }
+    .process-steps { grid-template-columns: 1fr; gap: 28px; }
+    .process-steps::before { display: none; }
+    .cta-cards { grid-template-columns: 1fr; }
+    .cta-wrap { padding: 56px 24px; }
+    .footer { padding: 20px 24px; flex-direction: column; gap: 10px; text-align: center; }
+    .llr-box { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">
+    <div class="logo-mark">MP</div>
+    <span class="logo-text">MedPath</span>
+  </div>
+  <span class="badge">Trial Class Open</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-label">J&D Premed 등록 예정 학생 · 학부모 대상</span>
+  <h1>프리메드에서 배우는 생물·화학,<br><em>영어로도 말할 수 있어야 합니다</em></h1>
+  <p class="hero-sub">같은 내용을 — 정확한 의학 어휘로, 논리적인 영어로 동시에 완성하세요.</p>
+  <p class="hero-desc">
+    아는 만큼 영어로 말할 수 있어야 — 비로소 실력이 됩니다.<br>
+    MedPath는 프리메드에서 학습하는 생물·화학을 소재로, 영어로 정확하게 구사하는 훈련을 병행합니다.
+  </p>
+  <a href="https://forms.gle/8qe34ipM2fLmaqQLA" class="hero-cta" target="_blank">
+    무료 트라이얼 수업 신청하기 <span class="arrow">→</span>
+  </a>
+</section>
+
+<!-- STATS BANNER -->
+<div style="background: linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(201,169,110,0.04) 100%); border-top: 1px solid rgba(201,169,110,0.2); border-bottom: 1px solid rgba(201,169,110,0.2); padding: 36px 48px;">
+  <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns: repeat(3,1fr); gap:0; text-align:center;">
+    <div style="padding:0 24px; border-right:1px solid rgba(201,169,110,0.15);">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; color:#C9A96E; line-height:1;">구술시험</div>
+      <div style="font-size:12px; color:rgba(242,244,248,0.5); margin-top:8px; font-weight:300; line-height:1.6;">입학의 마지막 관문<br>생물·화학을 영어로 즉답해야 합니다</div>
+    </div>
+    <div style="padding:0 24px; border-right:1px solid rgba(201,169,110,0.15);">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; color:#C9A96E; line-height:1;">반복 훈련</div>
+      <div style="font-size:12px; color:rgba(242,244,248,0.5); margin-top:8px; font-weight:300; line-height:1.6;">아는 것을 영어로 말하는 능력<br>훈련 없이는 만들어지지 않습니다</div>
+    </div>
+    <div style="padding:0 24px;">
+      <div style="font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; color:#C9A96E; line-height:1;">합격</div>
+      <div style="font-size:12px; color:rgba(242,244,248,0.5); margin-top:8px; font-weight:300; line-height:1.6;">프리메드 + MedPath<br>지식과 표현력을 동시에 완성</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- WHAT IS MEDPATH -->
+<section class="section">
+  <span class="section-tag">왜 MedPath를 병행하는가</span>
+  <h2>지식은 쌓이고 있습니다.<br><em>그걸 영어로 꺼내는 훈련</em>이 필요합니다</h2>
+  <p>
+    프리메드에서 배우는 생물·화학 — 그 내용을 그대로 영어로도 말할 수 있어야 합니다.
+    정확한 의학 어휘, 논리적인 문장 구조, 즉각적인 표현력.
+    MedPath는 새로운 것을 가르치지 않습니다. 지금 배우고 있는 내용을 영어로도 완성하는 훈련입니다.
+    프리메드와 MedPath를 함께 할 때 — 입학 구술시험에서 준비된 언어로 답할 수 있습니다.
+  </p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3>생물·화학 × 영어 동시 완성</h3>
+      <p>프리메드에서 배운 내용을 소재로 영어로 반복 훈련. 구술시험에서 요구하는 바로 그 능력을 만듭니다.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3>정확한 의학 어휘 구사</h3>
+      <p>입학 인터뷰에서 실제로 쓰이는 의학 영어 표현을 반복 사용하며 자연스럽게 체득합니다.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3>논리적 영어 표현 구조화</h3>
+      <p>알고 있는 내용을 영어로 논리 정연하게 전달하는 훈련. 구술시험 당일 막힘 없이 답할 수 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PROCESS -->
+<div class="process-wrap">
+  <div class="process-inner">
+    <span class="section-tag">Session Architecture</span>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.5vw,38px); font-weight:600; margin-bottom:8px;">
+      4단계 세션 사이클로<br><em style="font-style:italic; color:var(--accent);">매 수업이 구조적으로 작동합니다</em>
+    </h2>
+    <p style="font-size:14px; color:rgba(242,244,248,0.55); font-weight:300; margin-top:8px;">
+      구술시험 당일 — 준비된 언어로 답할 수 있도록 설계된 훈련 구조입니다.
+    </p>
+
+    <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-top:36px;">
+
+      <div style="background:var(--navy-mid); padding:28px 22px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; color:rgba(201,169,110,0.2); line-height:1; margin-bottom:12px; font-style:italic;">01</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Prepare</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--white); margin-bottom:10px;">사전 준비</div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);">레벨 맞춤 1:1 학습 계획</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);">오디오 + 이중언어 학습 자료</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0;">사전 예습 확인 시스템</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--navy-mid); padding:28px 22px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; color:rgba(201,169,110,0.2); line-height:1; margin-bottom:12px; font-style:italic;">02</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Train</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--white); margin-bottom:10px;">세션 훈련</div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);">1:1 실시간 구술 퍼포먼스 훈련</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);">정밀 스피킹 드릴 + 발음 교정</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0;">의학 용어 맥락 구사 훈련</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--navy-mid); padding:28px 22px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; color:rgba(201,169,110,0.2); line-height:1; margin-bottom:12px; font-style:italic;">03</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Analyze · LLR</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--white); margin-bottom:10px;">LLR 리포트</div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);">매 세션 후 구조화된 분석 보고서</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">5개 영역 분석 (Speaking · Vocab 등)</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0;">다음 세션 개선 방향 제시</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--navy-mid); padding:28px 22px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; color:rgba(201,169,110,0.2); line-height:1; margin-bottom:12px; font-style:italic;">04</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">Improve</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--white); margin-bottom:10px;">지속 최적화</div>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);">개인 오류 패턴 추적 · 해결</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0; border-bottom:1px solid rgba(255,255,255,0.05);">월간 맞춤 표현 보고서</li>
+          <li style="font-size:12px; color:rgba(242,244,248,0.5); line-height:1.7; padding:3px 0;">Post-class 학습 지속 관리</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Program Structure one-liner -->
+    <div style="margin-top:20px; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.2); border-radius:12px; padding:20px 28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <div>
+        <span style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--accent);">Program Structure</span>
+        <p style="font-size:13px; color:rgba(242,244,248,0.7); margin-top:6px; font-weight:300;">Starter → Core → Pro · 3단계 · 총 9개월 과정 · 주 2/3/4회 선택 가능</p>
+      </div>
+      <a href="https://drive.google.com/file/d/1QcRAEdf8y0loI2QC8PBMLGfhbUp-Rkti/view?usp=sharing" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; color:var(--accent); text-decoration:none; border:1px solid rgba(201,169,110,0.3); padding:8px 18px; border-radius:100px; white-space:nowrap;">전체 커리큘럼 보기 →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ORAL EXAM SECTION -->
+<div style="background: var(--black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 48px;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <span class="section-tag">입학 구술시험 대비</span>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.5vw,38px); font-weight:600; line-height:1.2; margin-bottom:20px; letter-spacing:-0.3px;">
+      헝가리 의대 입학의 마지막 관문<br><em style="font-style:italic; color:var(--accent);">영어 구술시험을 함께 준비합니다</em>
+    </h2>
+    <p style="font-size:15px; font-weight:300; color:rgba(242,244,248,0.65); line-height:1.85; max-width:680px; margin-bottom:36px;">
+      Semmelweis, SZTE, PTE, 헝가리 수의대 — 헝가리 의대 입학 구술시험은 생물·화학 지식을 영어로 즉각 설명하는 능력을 봅니다.
+      프리메드에서 지식을 쌓고, MedPath에서 그 지식을 영어로 말하는 훈련을 반복한 학생은
+      구술시험 당일 — 준비된 언어로 답할 수 있습니다.
+    </p>
+    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px;">
+      <div style="background: var(--navy-mid); border: 1px solid var(--border); border-radius:12px; padding:24px 20px;">
+        <div style="font-size:22px; margin-bottom:12px;">🏛️</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">대상 대학</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:var(--white); line-height:1.8;">Semmelweis · SZTE<br>PTE · 헝가리 수의대</div>
+      </div>
+      <div style="background: var(--navy-mid); border: 1px solid var(--border); border-radius:12px; padding:24px 20px;">
+        <div style="font-size:22px; margin-bottom:12px;">🎙️</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">시험 형태</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:var(--white); line-height:1.8;">생물·화학 기반<br>영어 구술 인터뷰</div>
+      </div>
+      <div style="background: var(--navy-mid); border: 1px solid var(--border); border-radius:12px; padding:24px 20px;">
+        <div style="font-size:22px; margin-bottom:12px;">✅</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">MedPath 준비</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:var(--white); line-height:1.8;">실전 구술 반복훈련<br>+ LLR 정밀 분석</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-wrap">
+  <span class="section-tag" style="display:block; margin-bottom:16px;">트라이얼 수업 신청</span>
+  <h2>프리메드를 준비 중이라면<br><em>구술시험, 지금부터 함께 준비하세요</em></h2>
+  <p class="cta-sub">
+    현재 구술 표현 수준을 진단하고,<br>
+    입학 인터뷰까지 어떻게 준비할지 방향을 안내드립니다.
+  </p>
+
+  <div class="cta-cards">
+    <a href="https://forms.gle/8qe34ipM2fLmaqQLA" class="cta-card primary" target="_blank">
+      <span class="card-icon">✏️</span>
+      <span class="card-label">신청하기</span>
+      <h4>트라이얼 수업 신청</h4>
+      <p>무료 진단 수업 신청 폼으로 바로 이동합니다.</p>
+    </a>
+    <a href="https://drive.google.com/file/d/1QcRAEdf8y0loI2QC8PBMLGfhbUp-Rkti/view?usp=sharing" class="cta-card" target="_blank">
+      <span class="card-icon">📄</span>
+      <span class="card-label">자료 보기</span>
+      <h4>프로그램 소개 PDF</h4>
+      <p>프로그램 구조, 커리큘럼, 트랙 정보를 확인하세요.</p>
+    </a>
+    <a href="https://medpathglobal.io/kr/index.html" class="cta-card" target="_blank">
+      <span class="card-icon">🌐</span>
+      <span class="card-label">웹사이트</span>
+      <h4>MedPath 공식 사이트</h4>
+      <p>Phase I · Phase II 전체 시스템을 자세히 확인하세요.</p>
+    </a>
+  </div>
+
+  <p class="disclaimer">
+    트라이얼 수업 후 별도 강요나 자동 등록은 없습니다 · 개인 진단 결과 기반 안내만 진행됩니다
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <div class="footer-logo-mark">MP</div>
+    <span class="footer-name">MedPath · Medical School Admission System</span>
+  </div>
+  <span class="footer-right">medpathglobal.io · Korea & Japan → European Medical Universities</span>
+</footer>
+
+</body>
+</html>
