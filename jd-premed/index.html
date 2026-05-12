@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MedPath | 프리메드 학생을 위한 의학 영어 구술 훈련</title>
+<meta name="description" content="J&D Premed 학생 대상 · 프리메드에서 배우는 생물·화학을 영어로 말하는 능력으로 완성하세요. 헝가리 의대 입학 구술시험 대비 전문 프로그램.">
+<meta property="og:title" content="MedPath | 프리메드 학생을 위한 의학 영어 구술 훈련">
+<meta property="og:description" content="프리메드에서 배우는 생물·화학, 영어로도 말할 수 있어야 합니다. 헝가리 의대 구술시험 대비 · 트라이얼 수업 신청 가능.">
+<meta property="og:image" content="https://medpathglobal.io/og-image.png">
+<meta property="og:url" content="https://medpathglobal.io/jd-premed">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MedPath | 프리메드 학생을 위한 의학 영어 구술 훈련">
+<meta name="twitter:description" content="프리메드에서 배우는 생물·화학, 영어로도 말할 수 있어야 합니다. 헝가리 의대 구술시험 대비 · 트라이얼 수업 신청 가능.">
+<meta name="twitter:image" content="https://medpathglobal.io/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -76,6 +86,11 @@
     padding: 5px 14px;
     border-radius: 100px;
     font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .badge:hover {
+    background: rgba(201,169,110,0.1);
+    border-color: rgba(201,169,110,0.6);
   }
 
   /* ── HERO ── */
@@ -478,16 +493,25 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 700px) {
-    .header { padding: 20px 24px; }
-    .hero, .section { padding: 48px 24px; }
+    .header { padding: 20px 20px; }
+    .hero, .section { padding: 48px 20px; }
     .pillars { grid-template-columns: 1fr; }
-    .process-wrap { padding: 48px 24px; }
-    .process-steps { grid-template-columns: 1fr; gap: 28px; }
-    .process-steps::before { display: none; }
     .cta-cards { grid-template-columns: 1fr; }
-    .cta-wrap { padding: 56px 24px; }
-    .footer { padding: 20px 24px; flex-direction: column; gap: 10px; text-align: center; }
-    .llr-box { flex-direction: column; }
+    .cta-wrap { padding: 56px 20px; }
+    .footer { padding: 20px 20px; flex-direction: column; gap: 10px; text-align: center; }
+    .process-wrap { padding: 48px 20px; }
+    .stats-grid { grid-template-columns: 1fr !important; }
+    .stats-item { border-right: none !important; border-bottom: 1px solid rgba(201,169,110,0.15); padding: 20px 0 !important; }
+    .stats-item:last-child { border-bottom: none; }
+    .session-grid { grid-template-columns: 1fr !important; }
+    .oral-grid { grid-template-columns: 1fr !important; }
+    .program-bar { flex-direction: column !important; align-items: flex-start !important; }
+    .hero-cta { width: 100%; justify-content: center; }
+  }
+
+  @media (min-width: 701px) and (max-width: 900px) {
+    .session-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .stats-grid { grid-template-columns: repeat(3,1fr) !important; }
   }
 </style>
 </head>
@@ -499,7 +523,7 @@
     <div class="logo-mark">MP</div>
     <span class="logo-text">MedPath</span>
   </div>
-  <span class="badge">Trial Class Open</span>
+  <a href="https://forms.gle/8qe34ipM2fLmaqQLA" target="_blank" class="badge" style="text-decoration:none;">Trial Class Open</a>
 </header>
 
 <!-- HERO -->
@@ -517,17 +541,17 @@
 </section>
 
 <!-- STATS BANNER -->
-<div style="background: linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(201,169,110,0.04) 100%); border-top: 1px solid rgba(201,169,110,0.2); border-bottom: 1px solid rgba(201,169,110,0.2); padding: 36px 48px;">
-  <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns: repeat(3,1fr); gap:0; text-align:center;">
-    <div style="padding:0 24px; border-right:1px solid rgba(201,169,110,0.15);">
+<div style="background: linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(201,169,110,0.04) 100%); border-top: 1px solid rgba(201,169,110,0.2); border-bottom: 1px solid rgba(201,169,110,0.2); padding: clamp(24px, 4vw, 36px) clamp(20px, 5vw, 48px);">
+  <div class="stats-grid" style="max-width:900px; margin:0 auto; display:grid; grid-template-columns: repeat(3,1fr); gap:0; text-align:center;">
+    <div class="stats-item" style="padding:0 24px; border-right:1px solid rgba(201,169,110,0.15);">
       <div style="font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; color:#C9A96E; line-height:1;">구술시험</div>
       <div style="font-size:12px; color:rgba(242,244,248,0.5); margin-top:8px; font-weight:300; line-height:1.6;">입학의 마지막 관문<br>생물·화학을 영어로 즉답해야 합니다</div>
     </div>
-    <div style="padding:0 24px; border-right:1px solid rgba(201,169,110,0.15);">
+    <div class="stats-item" style="padding:0 24px; border-right:1px solid rgba(201,169,110,0.15);">
       <div style="font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; color:#C9A96E; line-height:1;">반복 훈련</div>
       <div style="font-size:12px; color:rgba(242,244,248,0.5); margin-top:8px; font-weight:300; line-height:1.6;">아는 것을 영어로 말하는 능력<br>훈련 없이는 만들어지지 않습니다</div>
     </div>
-    <div style="padding:0 24px;">
+    <div class="stats-item" style="padding:0 24px;">
       <div style="font-family:'Cormorant Garamond',serif; font-size:38px; font-weight:600; color:#C9A96E; line-height:1;">합격</div>
       <div style="font-size:12px; color:rgba(242,244,248,0.5); margin-top:8px; font-weight:300; line-height:1.6;">프리메드 + MedPath<br>지식과 표현력을 동시에 완성</div>
     </div>
@@ -579,7 +603,7 @@
       구술시험 당일 — 준비된 언어로 답할 수 있도록 설계된 훈련 구조입니다.
     </p>
 
-    <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-top:36px;">
+    <div class="session-grid" style="display:grid; grid-template-columns: repeat(4,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-top:36px;">
 
       <div style="background:var(--navy-mid); padding:28px 22px;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; color:rgba(201,169,110,0.2); line-height:1; margin-bottom:12px; font-style:italic;">01</div>
@@ -628,7 +652,7 @@
     </div>
 
     <!-- Program Structure one-liner -->
-    <div style="margin-top:20px; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.2); border-radius:12px; padding:20px 28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <div class="program-bar" style="margin-top:20px; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.2); border-radius:12px; padding:20px 28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
       <div>
         <span style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:var(--accent);">Program Structure</span>
         <p style="font-size:13px; color:rgba(242,244,248,0.7); margin-top:6px; font-weight:300;">Starter → Core → Pro · 3단계 · 총 9개월 과정 · 주 2/3/4회 선택 가능</p>
@@ -640,7 +664,7 @@
 </div>
 
 <!-- ORAL EXAM SECTION -->
-<div style="background: var(--black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 48px;">
+<div style="background: var(--black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: clamp(40px, 6vw, 64px) clamp(20px, 5vw, 48px);">
   <div style="max-width: 900px; margin: 0 auto;">
     <span class="section-tag">입학 구술시험 대비</span>
     <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3.5vw,38px); font-weight:600; line-height:1.2; margin-bottom:20px; letter-spacing:-0.3px;">
@@ -651,7 +675,7 @@
       프리메드에서 지식을 쌓고, MedPath에서 그 지식을 영어로 말하는 훈련을 반복한 학생은
       구술시험 당일 — 준비된 언어로 답할 수 있습니다.
     </p>
-    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px;">
+    <div class="oral-grid" style="display:grid; grid-template-columns: repeat(3,1fr); gap:12px;">
       <div style="background: var(--navy-mid); border: 1px solid var(--border); border-radius:12px; padding:24px 20px;">
         <div style="font-size:22px; margin-bottom:12px;">🏛️</div>
         <div style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">대상 대학</div>
