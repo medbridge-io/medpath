@@ -145,7 +145,7 @@ section{padding:64px 0;}
 .tier .td{font-size:13px;opacity:.82;margin-top:8px;line-height:1.7;}
 
 /* depth table */
-table.ex{width:100%;border-collapse:collapse;margin-top:26px;font-size:13px;background:var(--cream-l);border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(11,37,69,.06);}
+table.ex{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:26px;font-size:13px;background:var(--cream-l);border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(11,37,69,.06);}
 table.ex th,table.ex td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top;}
 table.ex thead th{background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.03em;}
 table.ex thead th:nth-child(2){background:var(--teal);}
@@ -328,8 +328,8 @@ footer{background:var(--darker);color:rgba(255,255,255,.62);padding:50px 0 36px;
   <h2 data-i18n="sysH">하나의 시스템, 세 개의 브랜드 — 디자인도 학습도 이어집니다.</h2>
   <p data-i18n="sysP">LYVON은 프리메드 교육의 Communication Output Layer를 구축하는 단일 시스템입니다. MedBridge에서 기초를 다지고 MedPath로 심화하며, 같은 디자인 언어·같은 세션 구조·같은 LLR 분석으로 끊김 없이 연결됩니다.</p>
   <div class="chips">
-    <div class="chip parent"><div class="dot">V</div><h4>LYVON</h4><span data-i18n="sysB1">통합 브랜드 · 메디컬 학술 영어 커뮤니케이션 시스템</span><span class="arrow">→</span></div>
-    <div class="chip mb"><div class="dot">B</div><h4>MedBridge</h4><span data-i18n="sysB2">커뮤니케이션 기초 과정 · 어휘·발음·말하기 기초 (30토픽)</span><span class="arrow">→</span></div>
+    <a href="https://lyvon.io/?utm_source=medpath&utm_medium=chip" class="chip parent" style="text-decoration:none;color:inherit;cursor:pointer;"><div class="dot">V</div><h4>LYVON</h4><span data-i18n="sysB1">통합 브랜드 · 메디컬 학술 영어 커뮤니케이션 시스템</span><span class="arrow">→</span></a>
+    <a href="https://medbridgeedu.io/?utm_source=medpath&utm_medium=chip" class="chip mb" style="text-decoration:none;color:inherit;cursor:pointer;"><div class="dot">B</div><h4>MedBridge</h4><span data-i18n="sysB2">커뮤니케이션 기초 과정 · 어휘·발음·말하기 기초 (30토픽)</span><span class="arrow">→</span></a>
     <div class="chip mp"><div class="dot">P</div><h4>MedPath</h4><span data-i18n="sysB3">심화 과정 · 같은 50레슨을 정의→설명→논증 (3티어)</span><span class="arrow">→</span></div>
   </div>
 </div></div></section>
@@ -671,7 +671,7 @@ footer{background:var(--darker);color:rgba(255,255,255,.62);padding:50px 0 36px;
     <div class="foot-col"><h5>MEDPATH</h5><a href="#tiers" data-i18n="footF1">3 티어 심화</a><a href="#curriculum" data-i18n="footF2">50레슨 인덱스</a><a href="#session" data-i18n="footF3">세션 사이클</a><a href="#enroll" data-i18n="footF4">수강 안내</a></div>
   </div>
   <div class="foot-bottom">
-    <span style="display:block;margin-bottom:10px;font-family:var(--sans);"><a href="legal.html#privacy" data-i18n="footPriv">개인정보처리방침</a><span style="color:rgba(255,255,255,.3);margin:0 8px;">·</span><a href="legal.html#terms" data-i18n="footTerms">이용약관</a></span>
+    <span style="display:block;margin-bottom:10px;font-family:var(--sans);"><a href="legal-medpath.html#privacy" data-i18n="footPriv">개인정보처리방침</a><span style="color:rgba(255,255,255,.3);margin:0 8px;">·</span><a href="legal-medpath.html#terms" data-i18n="footTerms">이용약관</a></span>
     © 2024–2026 LYVON · MedBridge + MedPath + MedConnect · All rights reserved
   </div>
 </div></footer>
