@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedPath · 법적 고지 (개인정보처리방침 · 이용약관)</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="description" content="LYVON · MedBridge + MedPath + MedConnect 서비스의 개인정보처리방침 및 이용약관.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700;900&family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5EFE4; --cream2:#EDE4D3; --cream-l:#FCFBF7;
+  --navy:#0B2545; --navy2:#15325A; --darker:#081B33;
+  --navy-82:rgba(11,37,69,.82); --navy-55:rgba(11,37,69,.55);
+  --gold:#3E4F8A; --gold-d:#33427A; --gold-l:#EEF0F8; --gold-dark:#5566A6;
+  --muted:#5A6472; --border:rgba(11,37,69,.1);
+  --serif:'Lora',serif; --sans:'Noto Sans KR','Noto Sans JP','Inter',sans-serif; --en:'Inter',sans-serif;
+  --maxw:1320px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-serif;}
+body{font-family:var(--sans);color:var(--navy);background:linear-gradient(135deg,#F5EFE4,#EDE4D3);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.en{font-family:var(--en);}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+/* 읽기 영역은 가독성을 위해 좁게(좌측 정렬) */
+.ref-note{max-width:720px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,239,228,.96);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(62,79,138,.25);padding:14px 0;}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:12px;}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:3px;flex-shrink:0;}
+.brand-row{display:flex;align-items:center;gap:10px;}
+.brand .mark{font-family:var(--en);font-weight:700;font-size:20px;letter-spacing:.04em;color:var(--navy);}
+.mark b{color:var(--gold);}
+.brand .badge{font-family:var(--en);font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--cream-l);background:var(--gold);padding:3px 8px;border-radius:3px;}
+.brand-tag{font-size:10.5px;color:var(--navy-55);letter-spacing:.01em;font-weight:500;line-height:1;white-space:nowrap;}
+.nav-links{display:flex;align-items:center;gap:14px;}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+.nav-toggle span{width:24px;height:2px;background:var(--navy);display:block;border-radius:2px;transition:.3s;}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-back{font-size:13px;font-weight:600;color:var(--navy-82);white-space:nowrap;}
+.nav-back:hover{color:var(--gold);}
+.lang-switch{display:inline-flex;border:1px solid rgba(11,37,69,.16);border-radius:8px;overflow:hidden;}
+.lang-switch button{font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.02em;padding:7px 12px;background:transparent;border:none;color:var(--navy-55);cursor:pointer;transition:background .2s,color .2s;}
+.lang-switch button+button{border-left:1px solid rgba(11,37,69,.12);}
+.lang-switch button.active{background:var(--gold);color:#fff;}
+.lang-switch button:hover:not(.active){color:var(--navy);}
+
+header.legal-head{padding:150px 0 48px;position:relative;}
+header.legal-head::before{content:"";position:absolute;left:0;top:18%;height:64%;width:6px;background:linear-gradient(180deg,rgba(62,79,138,0),#3E4F8A,rgba(62,79,138,0));}
+.eyebrow{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-d);margin-bottom:12px;}
+header.legal-head h1{font-family:var(--serif);font-size:38px;font-weight:600;letter-spacing:-.01em;}
+.head-sub{font-size:14px;color:var(--navy-82);margin-top:10px;}
+.head-sub b{color:var(--navy);font-weight:700;}
+.updated{font-size:12.5px;color:var(--navy-55);margin-top:10px;}
+.ref-note{font-size:12px;color:var(--navy-55);background:rgba(62,79,138,.08);border:1px dashed rgba(62,79,138,.4);border-radius:8px;padding:10px 14px;margin-top:18px;line-height:1.6;}
+
+.tabs{display:flex;gap:8px;margin:24px 0 8px;border-bottom:1px solid var(--border);}
+.tab{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--navy-55);background:none;border:none;padding:13px 18px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;}
+.tab:hover{color:var(--navy);}
+.tab.active{color:var(--navy);border-bottom-color:var(--gold);}
+
+.doc{display:none;padding:30px 0 10px;}
+.doc.active{display:block;}
+.doc .intro{font-size:14px;color:var(--navy-82);background:var(--cream-l);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:18px 22px;margin-bottom:30px;line-height:1.85;}
+.sec{margin-bottom:30px;}
+.sec h2{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);margin-bottom:12px;display:flex;align-items:baseline;gap:10px;}
+.sec h2 .no{font-family:var(--en);font-size:13px;font-weight:700;color:var(--gold-d);flex-shrink:0;}
+.sec h3{font-size:14px;font-weight:700;color:var(--navy);margin:14px 0 6px;}
+.sec p{font-size:14px;color:var(--navy-82);margin-bottom:8px;}
+.sec ul{list-style:none;margin:6px 0 6px;}
+.sec li{font-size:14px;color:var(--navy-82);padding-left:18px;position:relative;margin-bottom:6px;line-height:1.7;}
+.sec li::before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.sec li b{color:var(--navy);font-weight:700;}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px;background:var(--cream-l);border-radius:10px;overflow:hidden;box-shadow:0 4px 16px rgba(11,37,69,.05);}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--border);}
+th{background:var(--navy);color:var(--cream-l);font-weight:700;font-size:12.5px;letter-spacing:.02em;}
+tr:last-child td{border-bottom:none;}
+td:first-child{font-weight:700;color:var(--navy);width:46%;}
+.contact-card{background:var(--cream-l);border:1px solid var(--border);border-radius:12px;padding:18px 22px;font-size:14px;color:var(--navy-82);line-height:1.9;}
+.contact-card b{color:var(--navy);}
+.note{font-size:12.5px;color:var(--navy-55);margin-top:8px;}
+
+footer{background:#081B33;color:rgba(255,255,255,.62);padding:40px 0 34px;margin-top:50px;}
+.foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.foot-in .mark{font-family:var(--en);font-weight:700;font-size:18px;letter-spacing:.14em;color:#fff;}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.7);margin-left:18px;}
+.foot-links a:hover{color:#fff;}
+.foot-copy{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:22px;padding-top:18px;font-family:var(--en);font-size:11.5px;letter-spacing:.04em;color:rgba(255,255,255,.42);}
+
+@media(max-width:560px){
+  header.legal-head h1{font-size:29px;}
+  header.legal-head{padding-top:114px;}
+  .tab{padding:12px 12px;font-size:14px;}
+  td:first-child{width:52%;}
+  .wrap{padding:0 22px;}
+}
+@media(max-width:900px){
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:14px;background:rgba(245,239,228,.99);padding:20px 24px 24px;border-top:1px solid rgba(62,79,138,.25);box-shadow:0 16px 32px rgba(11,37,69,.14);transform:translateY(-10px);opacity:0;pointer-events:none;transition:transform .28s ease,opacity .28s ease;}
+  .nav-links.open{transform:none;opacity:1;pointer-events:auto;}
+  .nav-links .lang-switch{align-self:flex-start;}
+  .nav-toggle{display:flex;z-index:101;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="index.html#top" class="brand">
+      <span class="brand-row"><span class="mark">Med<b>Path</b></span></span>
+      <span class="brand-tag" data-i18n="brandTag">학술·전문 영어 커뮤니케이션 시스템</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="ko" class="active">KO</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="ja">日本語</button>
+      </div>
+      <a href="index.html" class="nav-back" data-i18n="navBack">← 홈으로</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="legal-head">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="headEyebrow">LEGAL · 한국어</div>
+    <h1 data-i18n="headTitle">법적 고지</h1>
+    <div class="head-sub" data-i18n="headSub">LYVON · <b>MedBridge + MedPath + MedConnect</b> 서비스</div>
+    <div class="updated" data-i18n="updatedLine">최종 업데이트: 2026년 1월</div>
+    <div class="ref-note" data-i18n="refNote">본 문서의 정본은 한국어본이며, 영어·일본어는 이해를 돕기 위한 참고용 번역입니다.</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab active" data-doc="privacy" data-i18n="tabPrivacy">개인정보처리방침</button>
+    <button class="tab" data-doc="terms" data-i18n="tabTerms">이용약관</button>
+  </div>
+
+  <!-- PRIVACY -->
+  <article class="doc active" id="privacy">
+    <div class="intro" data-i18n="p_intro">본 개인정보처리방침은 LYVON이 제공하는 <b>MedBridge · MedPath · MedConnect</b> 서비스 전반에 적용됩니다.</div>
+
+    <section class="sec">
+      <h2><span class="no">01</span><span data-i18n="p1_t">총칙</span></h2>
+      <p data-i18n="p1_a">LYVON(이하 "회사")은 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 등 관련 법령을 준수합니다.</p>
+      <p data-i18n="p1_b">회사는 본 개인정보처리방침을 통해, 이용자가 제공하는 개인정보가 어떠한 용도와 방식으로 이용되고 있는지 안내드립니다. 본 방침은 MedBridge, MedPath, MedConnect 서비스에 적용됩니다.</p>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">02</span><span data-i18n="p2_t">수집하는 개인정보 항목</span></h2>
+      <h3 data-i18n="p2_h1">① 필수 정보</h3>
+      <ul>
+        <li data-i18n="p2_l1">이름</li>
+        <li data-i18n="p2_l2">연락처 (전화번호, 이메일)</li>
+        <li data-i18n="p2_l3">학생 정보 (학년, 목표 등)</li>
+      </ul>
+      <h3 data-i18n="p2_h2">② 서비스 이용 과정에서 생성되는 정보</h3>
+      <ul>
+        <li data-i18n="p2_l4">수업·세션 참여 기록</li>
+        <li data-i18n="p2_l5">학습 데이터 (LLR 리포트, 스피킹·피드백 데이터)</li>
+        <li data-i18n="p2_l6">접속 로그, IP 정보</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">03</span><span data-i18n="p3_t">개인정보 수집 및 이용 목적</span></h2>
+      <ul>
+        <li data-i18n="p3_l1">수업·세션 운영 및 관리</li>
+        <li data-i18n="p3_l2">맞춤형 학습 제공 (<b>MedBridge / MedPath / MedConnect</b> 프로그램)</li>
+        <li data-i18n="p3_l3">LLR(Learning Log Report) 생성 및 제공</li>
+        <li data-i18n="p3_l4">상담 및 고객 응대</li>
+        <li data-i18n="p3_l5">서비스 개선 및 품질 향상</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">04</span><span data-i18n="p4_t">개인정보 보관 및 이용 기간</span></h2>
+      <p data-i18n="p4_a">원칙적으로 개인정보는 수집 및 이용 목적이 달성된 후 지체 없이 파기됩니다. 단, 다음의 경우에는 일정 기간 보관될 수 있습니다.</p>
+      <table>
+        <tr><th data-i18n="p4_th1">항목</th><th data-i18n="p4_th2">보관 기간</th></tr>
+        <tr><td data-i18n="p4_r1a">계약 및 결제 정보</td><td data-i18n="p4_r1b">5년</td></tr>
+        <tr><td data-i18n="p4_r2a">상담 기록</td><td data-i18n="p4_r2b">1년</td></tr>
+        <tr><td data-i18n="p4_r3a">학습 데이터 (LLR)</td><td data-i18n="p4_r3b">서비스 종료 후 1년</td></tr>
+      </table>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">05</span><span data-i18n="p5_t">개인정보 제3자 제공</span></h2>
+      <p data-i18n="p5_a">회사는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다. 단, 다음의 경우는 예외로 합니다.</p>
+      <ul>
+        <li data-i18n="p5_l1">이용자가 사전에 동의한 경우</li>
+        <li data-i18n="p5_l2">법령에 의한 요청이 있는 경우</li>
+        <li data-i18n="p5_l3">수업·세션 운영을 위한 강사/파트너에게 필요한 최소한의 정보 제공</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">06</span><span data-i18n="p6_t">개인정보 처리 위탁</span></h2>
+      <p data-i18n="p6_a">회사는 서비스 운영을 위해 다음과 같은 업무를 외부에 위탁할 수 있습니다.</p>
+      <ul>
+        <li data-i18n="p6_l1">결제 처리</li>
+        <li data-i18n="p6_l2">데이터 저장 및 관리</li>
+        <li data-i18n="p6_l3">학습 리포트(LLR) 시스템 운영</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">07</span><span data-i18n="p7_t">이용자의 권리</span></h2>
+      <ul>
+        <li data-i18n="p7_l1">개인정보 열람 요청</li>
+        <li data-i18n="p7_l2">수정 요청</li>
+        <li data-i18n="p7_l3">삭제 요청</li>
+        <li data-i18n="p7_l4">처리 정지 요청</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">08</span><span data-i18n="p8_t">개인정보 보호 책임자</span></h2>
+      <div class="contact-card">
+        <span data-i18n="p8_l1">회사명: <b>LYVON</b></span><br>
+        <span data-i18n="p8_l2">책임자: LYVON 운영팀</span><br>
+        <span data-i18n="p8_l3">이메일: <b>info@lyvon.io</b></span>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">09</span><span data-i18n="p9_t">변경 사항 고지</span></h2>
+      <p data-i18n="p9_a">본 방침은 변경될 수 있으며, 변경 시 웹사이트를 통해 공지합니다.</p>
+      <p class="note" data-i18n="updatedLine">최종 업데이트: 2026년 1월</p>
+    </section>
+  </article>
+
+  <!-- TERMS -->
+  <article class="doc" id="terms">
+    <div class="intro" data-i18n="t_intro">본 약관은 LYVON이 제공하는 <b>MedBridge · MedPath · MedConnect</b> 서비스의 이용 조건을 규정합니다.</div>
+
+    <section class="sec">
+      <h2><span class="no">01</span><span data-i18n="t1_t">목적</span></h2>
+      <p data-i18n="t1_a">본 약관은 LYVON(이하 "회사")이 제공하는 MedBridge, MedPath, MedConnect 서비스의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">02</span><span data-i18n="t2_t">서비스 정의</span></h2>
+      <p data-i18n="t2_a">회사는 다음과 같은 서비스를 제공합니다.</p>
+      <ul>
+        <li data-i18n="t2_l1"><b>MedBridge</b> — 메디컬 영어 기초 프로그램 (의학 영어 입문·기초 다지기)</li>
+        <li data-i18n="t2_l2"><b>MedPath</b> — 프리미엄 의대 입시 영어 교육 프로그램 (Starter · Core · Pro 3단계)</li>
+        <li data-i18n="t2_l3"><b>MedConnect</b> — 의대 합격 이후를 위한 의료 영어 멤버십 (의대·치대·약대·수의대생 및 예비 의료 전문가 대상, 2026년 7월 파일럿 시작)</li>
+        <li data-i18n="t2_l4"><b>LLR 시스템</b> — 학습 데이터 기반 분석 리포트 제공</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">03</span><span data-i18n="t3_t">서비스 이용</span></h2>
+      <ul>
+        <li data-i18n="t3_l1">이용자는 회사가 제공하는 절차에 따라 서비스를 신청할 수 있습니다.</li>
+        <li data-i18n="t3_l2">회사는 필요 시 이용자의 신청을 제한하거나 거절할 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">04</span><span data-i18n="t4_t">수업·세션 운영 정책</span></h2>
+      <ul>
+        <li data-i18n="t4_l1">수업 및 세션은 사전 예약 기반으로 운영됩니다.</li>
+        <li data-i18n="t4_l2">일정 변경은 최소 24시간 전에 요청해야 합니다.</li>
+        <li data-i18n="t4_l3">당일 취소 또는 무단 결석 시 해당 수업/세션은 소진 처리될 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">05</span><span data-i18n="t5_t">결제 및 환불 정책</span></h2>
+      <p data-i18n="t5_a">이용자는 서비스 이용 전 요금을 결제해야 합니다.</p>
+      <table>
+        <tr><th data-i18n="t5_th1">구분</th><th data-i18n="t5_th2">환불 기준</th></tr>
+        <tr><td data-i18n="t5_r1a">수업 시작 전</td><td data-i18n="t5_r1b">100% 환불</td></tr>
+        <tr><td data-i18n="t5_r2a">일부 수강 후</td><td data-i18n="t5_r2b">잔여 수업 기준 환불</td></tr>
+        <tr><td data-i18n="t5_r3a">일정 기간 경과</td><td data-i18n="t5_r3b">환불 제한 가능</td></tr>
+      </table>
+      <p class="note" data-i18n="t5_note">구체적인 환불 규정은 프로그램(MedBridge · MedPath · MedConnect)별로 별도 안내될 수 있습니다.</p>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">06</span><span data-i18n="t6_t">이용자의 의무</span></h2>
+      <p data-i18n="t6_a">이용자는 다음 행위를 해서는 안 됩니다.</p>
+      <ul>
+        <li data-i18n="t6_l1">타인의 정보 도용</li>
+        <li data-i18n="t6_l2">서비스 운영 방해</li>
+        <li data-i18n="t6_l3">수업·세션 녹음 / 자료 무단 배포</li>
+        <li data-i18n="t6_l4">강사 및 서비스에 대한 부적절한 행위</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">07</span><span data-i18n="t7_t">지적재산권</span></h2>
+      <ul>
+        <li data-i18n="t7_l1">모든 교육 콘텐츠 및 자료(MedBridge · MedPath · MedConnect 포함)의 저작권은 LYVON에 있습니다.</li>
+        <li data-i18n="t7_l2">이용자는 이를 무단으로 복제, 배포할 수 없습니다.</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">08</span><span data-i18n="t8_t">서비스 변경 및 중단</span></h2>
+      <p data-i18n="t8_a">회사는 다음의 경우 서비스를 변경 또는 중단할 수 있습니다.</p>
+      <ul>
+        <li data-i18n="t8_l1">시스템 점검</li>
+        <li data-i18n="t8_l2">서비스 개선</li>
+        <li data-i18n="t8_l3">불가피한 운영상 사유</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">09</span><span data-i18n="t9_t">책임의 제한</span></h2>
+      <p data-i18n="t9_a">회사는 다음에 대해 책임을 지지 않습니다.</p>
+      <ul>
+        <li data-i18n="t9_l1">이용자의 귀책 사유로 발생한 문제</li>
+        <li data-i18n="t9_l2">외부 환경(네트워크 등)으로 인한 서비스 장애</li>
+      </ul>
+    </section>
+
+    <section class="sec">
+      <h2><span class="no">10</span><span data-i18n="t10_t">분쟁 해결</span></h2>
+      <ul>
+        <li data-i18n="t10_l1">본 약관은 대한민국 법을 따릅니다.</li>
+        <li data-i18n="t10_l2">분쟁 발생 시 관할 법원은 회사 소재지 기준으로 합니다.</li>
+      </ul>
+      <p class="note" data-i18n="updatedLine">최종 업데이트: 2026년 1월</p>
+    </section>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="mark">Med<b>Path</b></div>
+    <div class="foot-links">
+      <a href="#privacy" data-i18n="tabPrivacy">개인정보처리방침</a>
+      <a href="#terms" data-i18n="tabTerms">이용약관</a>
+      <a href="index.html" data-i18n="footHome">홈</a>
+    </div>
+    <div class="foot-copy">© 2024–2026 LYVON · MedBridge + MedPath + MedConnect · All rights reserved</div>
+  </div>
+</footer>
+
+<script>
+const I18N={
+ en:{
+  navBack:`← Home`, brandTag:`Academic & Professional Communication System`,
+  headEyebrow:`LEGAL · ENGLISH`,
+  headTitle:`Legal Notice`,
+  headSub:`LYVON · <b>MedBridge + MedPath + MedConnect</b> services`,
+  updatedLine:`Last updated: January 2026`,
+  refNote:`The Korean version is the authoritative text. English and Japanese are reference translations provided for convenience.`,
+  tabPrivacy:`Privacy Policy`, tabTerms:`Terms of Service`, footHome:`Home`,
+  p_intro:`This Privacy Policy applies to all <b>MedBridge · MedPath · MedConnect</b> services provided by LYVON.`,
+  p1_t:`General Provisions`,
+  p1_a:`LYVON ("the Company") values users' personal information and complies with the Personal Information Protection Act and other relevant laws.`,
+  p1_b:`Through this Privacy Policy, the Company explains how and for what purposes the personal information provided by users is used. This policy applies to the MedBridge, MedPath, and MedConnect services.`,
+  p2_t:`Personal Information Collected`,
+  p2_h1:`① Required information`,
+  p2_l1:`Name`, p2_l2:`Contact details (phone, email)`, p2_l3:`Student information (grade, goals, etc.)`,
+  p2_h2:`② Information generated through service use`,
+  p2_l4:`Class and session attendance records`,
+  p2_l5:`Learning data (LLR reports, speaking and feedback data)`,
+  p2_l6:`Access logs, IP information`,
+  p3_t:`Purpose of Collection and Use`,
+  p3_l1:`Operating and managing classes and sessions`,
+  p3_l2:`Providing personalized learning (<b>MedBridge / MedPath / MedConnect</b> programs)`,
+  p3_l3:`Generating and providing the LLR (Learning Log Report)`,
+  p3_l4:`Consultation and customer support`,
+  p3_l5:`Service improvement and quality enhancement`,
+  p4_t:`Retention and Use Period`,
+  p4_a:`In principle, personal information is destroyed without delay once the purpose of collection and use has been achieved. However, it may be retained for a certain period in the following cases.`,
+  p4_th1:`Item`, p4_th2:`Retention period`,
+  p4_r1a:`Contract and payment information`, p4_r1b:`5 years`,
+  p4_r2a:`Consultation records`, p4_r2b:`1 year`,
+  p4_r3a:`Learning data (LLR)`, p4_r3b:`1 year after service termination`,
+  p5_t:`Provision to Third Parties`,
+  p5_a:`As a rule, the Company does not provide users' personal information to external parties. The following are exceptions.`,
+  p5_l1:`When the user has given prior consent`,
+  p5_l2:`When required by law`,
+  p5_l3:`Providing the minimum information necessary to instructors/partners for operating classes and sessions`,
+  p6_t:`Outsourcing of Processing`,
+  p6_a:`The Company may outsource the following tasks to operate the service.`,
+  p6_l1:`Payment processing`, p6_l2:`Data storage and management`, p6_l3:`Operation of the learning report (LLR) system`,
+  p7_t:`Rights of Users`,
+  p7_l1:`Request to view personal information`, p7_l2:`Request for correction`, p7_l3:`Request for deletion`, p7_l4:`Request to suspend processing`,
+  p8_t:`Data Protection Officer`,
+  p8_l1:`Company: <b>LYVON</b>`, p8_l2:`Officer: LYVON Operations Team`, p8_l3:`Email: <b>info@lyvon.io</b>`,
+  p9_t:`Notice of Changes`,
+  p9_a:`This policy may be revised, and any changes will be announced on the website.`,
+  t_intro:`These Terms govern the conditions for using the <b>MedBridge · MedPath · MedConnect</b> services provided by LYVON.`,
+  t1_t:`Purpose`,
+  t1_a:`The purpose of these Terms is to define the rights, obligations, and responsibilities between the Company and users in connection with the use of the MedBridge, MedPath, and MedConnect services provided by LYVON ("the Company").`,
+  t2_t:`Definition of Services`,
+  t2_a:`The Company provides the following services.`,
+  t2_l1:`<b>MedBridge</b> — Foundational medical English program (introduction and fundamentals)`,
+  t2_l2:`<b>MedPath</b> — Premium medical-school admissions English program (Starter · Core · Pro, three tiers)`,
+  t2_l3:`<b>MedConnect</b> — A medical English membership for after admission (for students of medicine, dentistry, pharmacy, and veterinary science, and future medical professionals; pilot launching July 2026)`,
+  t2_l4:`<b>LLR system</b> — Analytical reports based on learning data`,
+  t3_t:`Use of Service`,
+  t3_l1:`Users may apply for the service according to the procedures provided by the Company.`,
+  t3_l2:`The Company may restrict or reject an application when necessary.`,
+  t4_t:`Class and Session Policy`,
+  t4_l1:`Classes and sessions operate on a reservation basis.`,
+  t4_l2:`Schedule changes must be requested at least 24 hours in advance.`,
+  t4_l3:`Same-day cancellation or no-show may result in the class/session being counted as used.`,
+  t5_t:`Payment and Refund Policy`,
+  t5_a:`Users must pay the applicable fee before using the service.`,
+  t5_th1:`Category`, t5_th2:`Refund terms`,
+  t5_r1a:`Before classes begin`, t5_r1b:`Full refund`,
+  t5_r2a:`After partial attendance`, t5_r2b:`Refund based on remaining classes`,
+  t5_r3a:`After a certain period`, t5_r3b:`Refund may be limited`,
+  t5_note:`Detailed refund rules may be provided separately for each program (MedBridge · MedPath · MedConnect).`,
+  t6_t:`User Obligations`,
+  t6_a:`Users must not engage in the following.`,
+  t6_l1:`Identity theft`, t6_l2:`Disrupting service operation`,
+  t6_l3:`Recording classes/sessions or distributing materials without authorization`,
+  t6_l4:`Inappropriate conduct toward instructors or the service`,
+  t7_t:`Intellectual Property`,
+  t7_l1:`The copyright of all educational content and materials (including MedBridge · MedPath · MedConnect) belongs to LYVON.`,
+  t7_l2:`Users may not reproduce or distribute them without authorization.`,
+  t8_t:`Changes and Suspension`,
+  t8_a:`The Company may change or suspend the service in the following cases.`,
+  t8_l1:`System maintenance`, t8_l2:`Service improvement`, t8_l3:`Unavoidable operational reasons`,
+  t9_t:`Limitation of Liability`,
+  t9_a:`The Company is not liable for the following.`,
+  t9_l1:`Issues arising from the user's fault`,
+  t9_l2:`Service disruptions due to external factors (e.g., network)`,
+  t10_t:`Dispute Resolution`,
+  t10_l1:`These Terms are governed by the laws of the Republic of Korea.`,
+  t10_l2:`In the event of a dispute, the competent court shall be determined based on the Company's location.`
+ },
+ ja:{
+  navBack:`← ホーム`, brandTag:`学術・専門英語コミュニケーション・システム`,
+  headEyebrow:`LEGAL · 日本語`,
+  headTitle:`法的告知`,
+  headSub:`LYVON · <b>MedBridge + MedPath + MedConnect</b> サービス`,
+  updatedLine:`最終更新: 2026年1月`,
+  refNote:`本書面の正本は韓国語版であり、英語・日本語は理解を助けるための参考訳です。`,
+  tabPrivacy:`プライバシーポリシー`, tabTerms:`利用規約`, footHome:`ホーム`,
+  p_intro:`本プライバシーポリシーは、LYVONが提供する<b>MedBridge · MedPath · MedConnect</b>サービス全般に適用されます。`,
+  p1_t:`総則`,
+  p1_a:`LYVON(以下「当社」)は利用者の個人情報を重要視し、「個人情報保護法」など関連法令を遵守します。`,
+  p1_b:`当社は本ポリシーを通じて、利用者が提供する個人情報がどのような目的・方法で利用されるかをご案内します。本方針はMedBridge・MedPath・MedConnectサービスに適用されます。`,
+  p2_t:`収集する個人情報の項目`,
+  p2_h1:`① 必須情報`,
+  p2_l1:`氏名`, p2_l2:`連絡先(電話番号・メール)`, p2_l3:`学生情報(学年・目標など)`,
+  p2_h2:`② サービス利用過程で生成される情報`,
+  p2_l4:`授業・セッション参加記録`,
+  p2_l5:`学習データ(LLRレポート、スピーキング・フィードバックデータ)`,
+  p2_l6:`アクセスログ、IP情報`,
+  p3_t:`個人情報の収集・利用目的`,
+  p3_l1:`授業・セッションの運営および管理`,
+  p3_l2:`個別学習の提供(<b>MedBridge / MedPath / MedConnect</b>プログラム)`,
+  p3_l3:`LLR(Learning Log Report)の作成・提供`,
+  p3_l4:`相談および顧客対応`,
+  p3_l5:`サービスの改善・品質向上`,
+  p4_t:`個人情報の保管・利用期間`,
+  p4_a:`原則として個人情報は収集・利用目的の達成後、遅滞なく破棄されます。ただし、次の場合は一定期間保管されることがあります。`,
+  p4_th1:`項目`, p4_th2:`保管期間`,
+  p4_r1a:`契約・決済情報`, p4_r1b:`5年`,
+  p4_r2a:`相談記録`, p4_r2b:`1年`,
+  p4_r3a:`学習データ(LLR)`, p4_r3b:`サービス終了後1年`,
+  p5_t:`個人情報の第三者提供`,
+  p5_a:`当社は原則として利用者の個人情報を外部に提供しません。ただし、次の場合は例外とします。`,
+  p5_l1:`利用者が事前に同意した場合`,
+  p5_l2:`法令に基づく要請がある場合`,
+  p5_l3:`授業・セッション運営のため、講師・パートナーに必要最小限の情報を提供する場合`,
+  p6_t:`個人情報処理の委託`,
+  p6_a:`当社はサービス運営のため、次の業務を外部に委託することがあります。`,
+  p6_l1:`決済処理`, p6_l2:`データの保存・管理`, p6_l3:`学習レポート(LLR)システムの運営`,
+  p7_t:`利用者の権利`,
+  p7_l1:`個人情報の閲覧請求`, p7_l2:`訂正請求`, p7_l3:`削除請求`, p7_l4:`処理停止請求`,
+  p8_t:`個人情報保護責任者`,
+  p8_l1:`会社名: <b>LYVON</b>`, p8_l2:`責任者: LYVON 運営チーム`, p8_l3:`メール: <b>info@lyvon.io</b>`,
+  p9_t:`変更事項の告知`,
+  p9_a:`本方針は変更されることがあり、変更時はウェブサイトを通じて告知します。`,
+  t_intro:`本規約は、LYVONが提供する<b>MedBridge · MedPath · MedConnect</b>サービスの利用条件を定めます。`,
+  t1_t:`目的`,
+  t1_a:`本規約は、LYVON(以下「当社」)が提供するMedBridge・MedPath・MedConnectサービスの利用に関し、当社と利用者の権利・義務および責任事項を定めることを目的とします。`,
+  t2_t:`サービスの定義`,
+  t2_a:`当社は次のサービスを提供します。`,
+  t2_l1:`<b>MedBridge</b> — メディカル英語の基礎プログラム(医学英語の入門・基礎固め)`,
+  t2_l2:`<b>MedPath</b> — プレミアム医学部入試英語プログラム(Starter · Core · Proの3段階)`,
+  t2_l3:`<b>MedConnect</b> — 医学部合格後のための医療英語メンバーシップ(医・歯・薬・獣医学部生および未来の医療専門家対象、2026年7月パイロット開始)`,
+  t2_l4:`<b>LLRシステム</b> — 学習データに基づく分析レポートの提供`,
+  t3_t:`サービスの利用`,
+  t3_l1:`利用者は当社が定める手続きに従いサービスを申し込むことができます。`,
+  t3_l2:`当社は必要に応じて利用者の申込を制限または拒否することがあります。`,
+  t4_t:`授業・セッション運営ポリシー`,
+  t4_l1:`授業およびセッションは事前予約制で運営されます。`,
+  t4_l2:`日程変更は最低24時間前に申請する必要があります。`,
+  t4_l3:`当日キャンセルまたは無断欠席の場合、当該授業・セッションは消化扱いとなることがあります。`,
+  t5_t:`決済・返金ポリシー`,
+  t5_a:`利用者はサービス利用前に料金を決済する必要があります。`,
+  t5_th1:`区分`, t5_th2:`返金基準`,
+  t5_r1a:`授業開始前`, t5_r1b:`全額返金`,
+  t5_r2a:`一部受講後`, t5_r2b:`残りの授業分を基準に返金`,
+  t5_r3a:`一定期間経過後`, t5_r3b:`返金が制限される場合あり`,
+  t5_note:`具体的な返金規定はプログラム(MedBridge · MedPath · MedConnect)ごとに別途案内される場合があります。`,
+  t6_t:`利用者の義務`,
+  t6_a:`利用者は次の行為をしてはなりません。`,
+  t6_l1:`他人の情報の盗用`, t6_l2:`サービス運営の妨害`,
+  t6_l3:`授業・セッションの録音/資料の無断配布`,
+  t6_l4:`講師およびサービスに対する不適切な行為`,
+  t7_t:`知的財産権`,
+  t7_l1:`すべての教育コンテンツおよび資料(MedBridge · MedPath · MedConnectを含む)の著作権はLYVONに帰属します。`,
+  t7_l2:`利用者はこれらを無断で複製・配布することはできません。`,
+  t8_t:`サービスの変更・中断`,
+  t8_a:`当社は次の場合、サービスを変更または中断することがあります。`,
+  t8_l1:`システム点検`, t8_l2:`サービス改善`, t8_l3:`やむを得ない運営上の事由`,
+  t9_t:`責任の制限`,
+  t9_a:`当社は次の事項について責任を負いません。`,
+  t9_l1:`利用者の責めに帰すべき事由により生じた問題`,
+  t9_l2:`外部環境(ネットワーク等)に起因するサービス障害`,
+  t10_t:`紛争の解決`,
+  t10_l1:`本規約は大韓民国の法律に従います。`,
+  t10_l2:`紛争が生じた場合、管轄裁判所は当社所在地を基準とします。`
+ }
+};
+
+// tabs
+const tabs=document.querySelectorAll('.tab');
+const docs=document.querySelectorAll('.doc');
+function show(id){
+  docs.forEach(d=>d.classList.toggle('active',d.id===id));
+  tabs.forEach(t=>t.classList.toggle('active',t.dataset.doc===id));
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{ show(t.dataset.doc); history.replaceState(null,'','#'+t.dataset.doc); window.scrollTo({top:0,behavior:'smooth'}); }));
+
+// i18n
+const i18nEls=document.querySelectorAll('[data-i18n]');
+const koBase=new Map();
+i18nEls.forEach(el=>koBase.set(el,el.innerHTML));
+function setLang(lang){
+  i18nEls.forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(lang==='ko'||!I18N[lang]||I18N[lang][k]===undefined){ el.innerHTML=koBase.get(el); }
+    else { el.innerHTML=I18N[lang][k]; }
+  });
+  document.documentElement.lang=lang;
+  document.querySelectorAll('#langSwitch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+}
+document.querySelectorAll('#langSwitch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+// open correct tab from hash
+const hh=(location.hash||'').replace('#','');
+if(hh==='terms'||hh==='privacy') show(hh);
+window.addEventListener('hashchange',()=>{const h=(location.hash||'').replace('#','');if(h==='terms'||h==='privacy'){show(h);window.scrollTo({top:0,behavior:'smooth'});}});
+
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.getElementById('navLinks');
+if(navToggle&&navLinks){
+  navToggle.addEventListener('click',()=>{navLinks.classList.toggle('open');navToggle.classList.toggle('open');});
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');navToggle.classList.remove('open');}));
+}
+</script>
+</body>
+</html>
