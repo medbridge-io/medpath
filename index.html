@@ -819,6 +819,8 @@ function setLang(lang){
   document.querySelectorAll('#langSwitch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
 }
 document.querySelectorAll('#langSwitch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+/* 브라우저 언어 자동감지: ko→KO, ja→JA, 그 외→EN */
+(function(){try{var l=(navigator.language||navigator.userLanguage||'en').toLowerCase();setLang(l.indexOf('ko')===0?'ko':l.indexOf('ja')===0?'ja':'en');}catch(e){}})();
 </script>
 <script>
 function lyvonSubscribe(){
