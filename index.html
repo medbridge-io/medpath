@@ -193,8 +193,8 @@ table.flow{width:100%;border-collapse:collapse;font-size:13.5px;background:var(-
 table.flow th,table.flow td{text-align:left;padding:13px 18px;border-bottom:1px solid var(--border);}
 table.flow thead th{background:var(--navy);color:#fff;font-size:12px;font-weight:700;}
 table.flow tr:last-child td{border-bottom:none;}
-.flow .ft{font-family:var(--en);font-weight:700;color:var(--ind);width:64px;}
-.flow .fs{font-weight:700;color:var(--navy);width:200px;}
+.flow .ft{font-family:var(--en);font-weight:700;color:var(--ind);}
+.flow .fs{font-weight:700;color:var(--navy);}
 .flow .fs .en{display:block;font-family:var(--en);font-size:11.5px;color:var(--navy-55);font-weight:600;}
 .arch-note{margin-top:16px;font-size:12.5px;color:var(--navy-55);line-height:1.7;}
 .arch-note b{color:var(--ind);}
@@ -279,8 +279,8 @@ footer{background:var(--darker);color:rgba(255,255,255,.62);padding:50px 0 36px;
   table.idx{font-size:12px;} .kt{font-size:11px;}
   .flow{font-size:12.5px;}
   .flow td{padding:11px 11px;}
-  .flow .ft{width:46px;}
-  .flow .fs{width:auto;white-space:nowrap;}
+  
+  .flow .fs{width:auto;}
   .flow .fs .en{font-size:10.5px;}
   .cta-qr{flex-direction:column;text-align:center;}
 }
@@ -371,6 +371,13 @@ footer{background:var(--darker);color:rgba(255,255,255,.62);padding:50px 0 36px;
 .ph-more{display:inline-block;margin-top:20px;font-family:var(--en);font-size:13px;font-weight:600;color:#3E4F8A;text-decoration:none;border-bottom:1px solid rgba(62,79,138,.45);padding-bottom:2px;transition:opacity .2s;}
 .ph-more:hover{opacity:.65;}
 @media(max-width:560px){.ph-tl{width:78px;font-size:9.5px;}.ph-tt{font-size:15px;}}
+
+
+@media(max-width:600px){
+  .flow{font-size:11px;}
+  .flow th,.flow td{padding:7px 6px;}
+  .flow .fs .en{font-size:9.5px;}
+}
 </style>
 </head>
 <body>
@@ -606,7 +613,13 @@ footer{background:var(--darker);color:rgba(255,255,255,.62);padding:50px 0 36px;
 <section id="architecture"><div class="wrap">
   <div class="s-head"><div class="s-tag" data-i18n="arTag">LESSON ARCHITECTURE · 레슨 구조</div>
     <h2 data-i18n="arH">모든 레슨에 반복되는 단일 50분 구조</h2></div>
-  <table class="flow"><thead><tr><th data-i18n="fT">시간</th><th data-i18n="fS">단계</th><th data-i18n="fC">무엇을 하나</th></tr></thead>
+  <table class="flow" style="table-layout:fixed;">
+        <colgroup>
+          <col style="width:16%">
+          <col style="width:32%">
+          <col style="width:52%">
+        </colgroup>
+        <thead><tr><th data-i18n="fT">시간</th><th data-i18n="fS">단계</th><th data-i18n="fC">무엇을 하나</th></tr></thead>
     <tbody>
       <tr><td class="ft">5′</td><td class="fs" data-i18n="step1">① 워밍업<span class="en">Warm-up</span></td><td data-i18n="ar1">오늘의 단어 3개와 직전 레슨을 회상하는 나선형 질문. 학생이 말하기 시작하게 합니다.</td></tr>
       <tr><td class="ft">10′</td><td class="fs" data-i18n="step2">② 핵심 단어<span class="en">Core Vocabulary</span></td><td data-i18n="ar2">핵심 단어 6개. 강사가 말하면 → 학생이 따라 하고 → 완전한 문장으로 말합니다.</td></tr>
