@@ -108,7 +108,7 @@ section{padding:64px 0;}
 .sysband h2{font-family:var(--serif);font-size:28px;font-weight:600;color:#fff;}
 .sysband p{color:rgba(255,255,255,.72);font-size:14.5px;margin-top:12px;max-width:760px;line-height:1.8;}
 .chips{display:flex;align-items:stretch;gap:14px;margin-top:30px;flex-wrap:wrap;}
-.chip{flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;position:relative;}
+.chip{flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;position:relative;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;cursor:pointer;}
 .chip .dot{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:15px;color:#fff;margin-bottom:12px;}
 .chip.parent .dot{background:var(--gold);color:#fff;}
 .chip.mb .dot{background:var(--teal);}
@@ -120,7 +120,7 @@ section{padding:64px 0;}
 
 /* PATHWAY ladder */
 .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.rung{background:var(--cream-l);border:1px solid var(--border);border-top:4px solid var(--ind);border-radius:14px;padding:22px 20px;box-shadow:0 6px 20px rgba(11,37,69,.05);}
+.rung{background:var(--cream-l);border:1px solid var(--border);border-top:4px solid var(--ind);border-radius:14px;padding:22px 20px;box-shadow:0 6px 20px rgba(11,37,69,.05);;transition:transform .2s ease,box-shadow .2s ease;cursor:default;}
 .rung.r0{border-top-color:var(--gold);}
 .rung.r1{border-top-color:var(--teal);}
 .rung.r2{border-top-color:var(--ind);}
@@ -134,7 +134,7 @@ section{padding:64px 0;}
 
 /* TIERS */
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.tier{border-radius:16px;padding:26px 24px;color:#fff;}
+.tier{border-radius:16px;padding:26px 24px;color:#fff;;transition:transform .2s ease,box-shadow .2s ease;cursor:default;}
 .tier.s{background:linear-gradient(160deg,#2a9d89,#1A7A6A);}
 .tier.c{background:linear-gradient(160deg,#4a5da0,#3E4F8A);}
 .tier.p{background:linear-gradient(160deg,#3a4250,#2A3140);}
@@ -382,6 +382,17 @@ footer{background:var(--darker);color:rgba(255,255,255,.62);padding:50px 0 36px;
 .guide-banner:hover{background:#33427A;color:#fff;}
 .guide-banner .gb-label{opacity:.72;font-weight:500;margin-right:6px;font-size:12px;}
 @media(max-width:560px){.guide-banner{font-size:12px;height:36px;line-height:36px;}}
+
+a.chip:hover,a.chip:focus{transform:translateY(-5px);border-color:rgba(255,255,255,.45);box-shadow:0 12px 28px rgba(0,0,0,.25);text-decoration:none;outline:none;}
+.chip.mp{border-color:rgba(255,255,255,.35);box-shadow:0 0 0 2px var(--ind-dark) inset;}
+.chip.mp::after{content:attr(data-current);position:absolute;top:10px;right:12px;font-size:9.5px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.5);font-family:var(--en);}
+
+.rung:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(11,37,69,.13);}
+.tier:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,.28);}
+@media(max-width:600px){
+  .rung:hover{transform:translateY(-3px);}
+  .tier:hover{transform:translateY(-3px);}
+}
 </style>
 </head>
 <body>
@@ -434,7 +445,7 @@ footer{background:var(--darker);color:rgba(255,255,255,.62);padding:50px 0 36px;
   <div class="chips">
     <a href="https://lyvon.io/?utm_source=medpath&utm_medium=chip" class="chip parent" style="text-decoration:none;color:inherit;cursor:pointer;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="dot" style="margin:0;">V</div><span style="font-size:17px;font-weight:800;color:rgba(255,255,255,.55);margin:0;line-height:1;-webkit-text-stroke:.5px currentColor;">→</span></div><h4>LYVON</h4><span data-i18n="sysB1">통합 브랜드 · 메디컬 학술 영어 커뮤니케이션 시스템</span><span class="arrow">→</span></a>
     <a href="https://medbridgeedu.io/?utm_source=medpath&utm_medium=chip" class="chip mb" style="text-decoration:none;color:inherit;cursor:pointer;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="dot" style="margin:0;">B</div><span style="font-size:17px;font-weight:800;color:rgba(255,255,255,.55);margin:0;line-height:1;-webkit-text-stroke:.5px currentColor;">→</span></div><h4>MedBridge</h4><span data-i18n="sysB2">커뮤니케이션 기초 과정 · 어휘·발음·말하기 기초 (30토픽)</span><span class="arrow">→</span></a>
-    <div class="chip mp"><div class="dot">P</div><h4>MedPath</h4><span data-i18n="sysB3">심화 과정 · 같은 50레슨을 정의→설명→논증 (3티어)</span><span class="arrow">→</span></div>
+    <div class="chip mp" data-current="현재 페이지"><div class="dot">P</div><h4>MedPath</h4><span data-i18n="sysB3">심화 과정 · 같은 50레슨을 정의→설명→논증 (3티어)</span><span class="arrow">→</span></div>
   </div>
 </div></div></section>
 
@@ -834,6 +845,8 @@ function setLang(lang){
     if(lang==='ko'||!I18N[lang]||I18N[lang][k]===undefined){el.innerHTML=koBase.get(el);}
     else{el.innerHTML=I18N[lang][k];}});
   document.documentElement.lang=lang;
+  const cur=document.querySelector('.chip.mp');
+  if(cur){const map={"ko":"현재 페이지","en":"Current page","ja":"現在のページ"}; cur.setAttribute('data-current',map[lang]||map.ko);}
   document.querySelectorAll('#langSwitch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
 }
 document.querySelectorAll('#langSwitch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
